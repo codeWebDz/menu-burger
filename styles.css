@@ -1,0 +1,131 @@
+body {
+  width: 100%;
+  height: 10vh;
+  margin: 0;
+  font-family: sans-serif;
+
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 10px 14px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* BURGER MENU */
+.burger-menu {
+  position: relative;
+}
+
+.burger-menu input {
+  display: none;
+}
+
+.burger {
+  width: 35px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.burger span {
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.burger-menu input:checked + label span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu input:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu input:checked + label span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f9f9f9;
+  position: absolute;
+  right: 0;
+  top: 65px;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu a {
+  display: block;
+  padding: 15px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+.menu a:hover {
+    background: #83b1adda;
+}
+.menu a:last-child {
+  border-bottom: none;
+}
+
+.burger-menu input:checked ~ .menu {
+  max-height: 300px;
+}
+
+/* IMAGE SECTION */
+.image {
+  width: 100%;
+  height: 91vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  }
+  .hero-image{
+    margin-bottom: 65px;
+  }
+
+
+  /* footer */
+ footer{
+    position: absolute;
+    bottom: 0%;
+    font-size: 29px;
+    width: 100%;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+    }
+    footer a , footer{
+    color: #3c879e;
+
+    }
+    footer a:hover{
+        color: #c41ca8;
+    }
+
+@media(min-width: 768px) {
+  .burger {
+    display: none;
+  }
+}
